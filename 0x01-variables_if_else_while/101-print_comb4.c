@@ -17,7 +17,7 @@ int main(void)
 		{
 			for (dig3 = 2; dig3 <= 9; dig3++)
 			{
-				if (dig 3 > dig2 && dig2 > dig 1)
+				if (dig3 > dig2 && dig2 > dig1)
 				{
 					putchar('0' + dig1);
 					putchar('0' + dig2);
