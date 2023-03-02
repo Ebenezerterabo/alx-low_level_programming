@@ -18,7 +18,7 @@ int main(void)
 
 		printf("%lu", sum);
 
-		fibo1 = fib2;
+		fibo1 = fibo2;
 
 		fibo2 = sum;
 
