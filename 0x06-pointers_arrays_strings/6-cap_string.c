@@ -9,31 +9,43 @@
 
 char *cap_string(char *str)
 {
-	int k = 0, l;
+	int n;
 
-	char a[] = "\t\n,:.!?\"(){}";
-
-	while (*(str + k))
+	for (n = 0; str[n] != '\0'; n++)
 	{
-		if (*(str + k) >= 'a' && *(str + k) <= 'z')
-		{
-			if (k == 0)
+		if (str[n] == ' '
+			|| str[n] == '\t'
+			|| str[n] == '\n'
+			|| str[n] == '.'
+			|| str[n] == ','
+			|| str[n] == '!'
+			|| str[n] == '?'
+			|| str[n] == '"'
+			|| str[n] == '('
+			|| str[n] == ')'
+			|| str[n] == '{'
+			|| str[n] == '}')
 
-				*(str + k) -= 'a' - 'A';
+			{
+				n++;
 
-				else
-				{
-					for (l = 0; l <= 12; l++)
-					{
-						if (a[l] == *(str + k - 1))
+				if (str[n] >= 'A' && str[n] <= 'Z')
 
-							*(str + k) -= 'a' - 'A';
+					n++;
 
-					}
+					else if (str[n] >= 'a' && str[n] <= 'z')
+						str[n] = str[a] - 32;
 
-				}
-		}
-		k++;
+						a--;
+
+			}
+
+			else if (str[0] >= 'a' && str[0] <= 'z')
+
+				str[0] = str[0] - 32;
+
 	}
+
 	return (str);
+
 }
