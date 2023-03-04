@@ -4,45 +4,36 @@
  * cap_string - A function that capitalizes all words of a string
  *
  * @str: string
- * Return: the string str
+ * Return: the pointer to the changed str
  */
 
 char *cap_string(char *str)
 {
-	int n;
+	int idx = 0;
 
-	for (n = 0; str[n] != '\0'; n++)
+	while (str[idx])
 	{
-		if (str[n] == ' '
-			|| str[n] == '\t'
-			|| str[n] == '\n'
-			|| str[n] == '.'
-			|| str[n] == ','
-			|| str[n] == '!'
-			|| str[n] == '?'
-			|| str[n] == '"'
-			|| str[n] == '('
-			|| str[n] == ')'
-			|| str[n] == '{'
-			|| str[n] == '}')
+		while (!(str[idx] >= 'a' && str[idx] <= 'z'))
 
-			{
-				n++;
+			idx++
 
-				if (str[n] >= 'A' && str[n] <= 'Z')
+			if (str[idx - 1] == ' ' || str[idx - 1] == '\t'
+				||  str[idx - 1] == '\n'
+				||  str[idx - 1] == ','
+				||  str[idx - 1] == ';'
+				||  str[idx - 1] == '.'
+				||  str[idx - 1] == '!'
+				||  str[idx - 1] == '?'
+				||  str[idx - 1] == '"'
+				||  str[idx - 1] == '('
+				||  str[idx - 1] == ')'
+				||  str[idx - 1] == '{'
+				||  str[idx - 1] == '}'
+				|| idx == 0)
 
-					n++;
+				str[idx] -= 32;
 
-					else if (str[n] >= 'a' && str[n] <= 'z')
-						str[n] = str[n] - 32;
-
-						n--;
-
-			}
-
-			else if (str[0] >= 'a' && str[0] <= 'z')
-
-				str[0] = str[0] - 32;
+				idx++;
 
 	}
 
