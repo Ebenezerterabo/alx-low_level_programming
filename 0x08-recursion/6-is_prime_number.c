@@ -9,7 +9,7 @@
 
 int checker(int i, int m)
 {
-	if (m < 2 || m % i ==0)
+	if (m < 2 || m % i == 0)
 		return (0);
 
 	else if (i > m / 2)
@@ -23,6 +23,7 @@ int checker(int i, int m)
 /**
  * is_prime_number - function that returns 1 if the input integer 
  * is a prime number, otherwise return 0.
+ * @n : integer
  * Return: int
  */
 
