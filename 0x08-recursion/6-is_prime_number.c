@@ -21,8 +21,7 @@ int checker(int i, int m)
 }
 
 /**
- * is_prime_number - function that returns 1 if the input integer 
- * is a prime number, otherwise return 0.
+ * is_prime_number - function states if number is prime
  * @n : integer
  * Return: int
  */
