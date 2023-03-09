@@ -13,7 +13,7 @@ int checker(int x, int y)
 	if (x * x == y)
 		return (x);
 
-	if (x * x > b)
+	if (x * x > y)
 		return (-1);
 
 	return (checker(x + 1, y));
