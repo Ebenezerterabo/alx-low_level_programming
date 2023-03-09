@@ -1,33 +1,34 @@
 #include "main.h"
 
 /**
- * _prime_number - A function that returns 1 if integr is prime
- * number and return 0 otherwise
- * @n : integer number
- *
- * Return: 1 if the input is prime value or 0 otherwise
+ * checker - checks to see if number is prime
+ * @i : integer 1
+ * @m : integer 2
+ * Return: integer
+ */
+
+int checker(int i, int m)
+{
+	if (m < 2 || m % i ==0)
+		return (0);
+
+	else if (i > m / 2)
+		return (1);
+
+	else
+		return (checker(i + 1, m));
+
+}
+
+/**
+ * is_prime_number - function that returns 1 if the input integer 
+ * is a prime number, otherwise return 0.
+ * Return: int
  */
 
 int is_prime_number(int n)
 {
-	if (n <= 1)
-		return (0);
-	return (check(n, n - 1));
-}
-
-/**
- * actual_prime - calculates if a number is prime recursively
- * @n: number to evaluate
- * @i: iterator
- *
- * Return: 1 if n is prime, 0 if not
- */
-int check(int n, int i)
-{
-	if (i == 1)
+	if (n == 2)
 		return (1);
-	if (n % i == 0 && i > 0)
-		return (0);
-	return (check(n, i - 1));
+	return (checker(2, n));
 }
-
