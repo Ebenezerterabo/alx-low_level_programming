@@ -24,12 +24,12 @@ int _sqrt_recursion(int n)
  *
  * Return: the resulting square root
  */
-int actual_sqrt_recursion(int x, int y)
+int check_recursion(int x, int y)
 {
 	if (y * y > x)
 		return (-1);
 	if (y * y == x)
 		return (y);
-	return (actual_sqrt_recursion(x, y + 1));
+	return (check_recursion(x, y + 1));
 }
 
