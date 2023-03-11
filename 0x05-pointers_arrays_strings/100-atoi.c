@@ -5,38 +5,24 @@
  *
  * Return: the integer
  */
+
 int _atoi(char *s)
 {
-	int a, d, n, len, f, digit;
+	int sign = 1, a = 0;
+	unsigned int res = 0;
 
-	a = 0;
-	b = 0;
-	c = 0;
-	len = 0;
-	d = 0;
-	dig = 0;
-
-	while (s[len] != '\0')
-		len++;
-	while (a < len && d == 0)
+	while (!(s[a] <= '9' && s[a] >= '0') && s[a] != '\0')
 	{
 		if (s[a] == '-')
-			++b;
-		if (s[a] >= '0' && s[a] <= '9')
-		{
-			dig = s[a] - '0';
-			if (b % 2)
-				dig = -dig;
-			c = c * 10 + dig;
-			d = 1;
-			if (s[a + 1] < '0' || s[a + 1] > '9')
-				break;
-			d = 0;
-		}
+			sign *= -1;
 		a++;
 	}
-
-	if (d == 0)
-		return (0);
-	return (c);
+	while (s[a] <= '9' && (s[a] >= '0' && s[a] != '\0'))
+	{
+		res = (res * 10) + (s[a] - '0');
+		i++;
+	}
+	res *= sign;
+	return (res);
 }
+
