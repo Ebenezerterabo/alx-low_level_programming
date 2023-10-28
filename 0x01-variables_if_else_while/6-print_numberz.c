@@ -12,7 +12,7 @@ int main(void)
 
 	while (count < 10)
 	{
-		putchar(count +'0');
+		putchar(count + '0');
 		count++;
 	}
 
