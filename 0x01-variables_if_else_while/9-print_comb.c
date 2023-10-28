@@ -23,5 +23,7 @@ int main(void)
 		count++;
 	}
 
+	putchar('\n');
+
 	return (0);
 }
