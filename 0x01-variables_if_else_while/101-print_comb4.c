@@ -2,7 +2,7 @@
 
 /**
  * main - A program that prints all possible different combination of
- * two digits.
+ * three digits.
  *
  * Return: Always 0 (Success)
  */
