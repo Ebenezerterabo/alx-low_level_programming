@@ -11,7 +11,7 @@ int _isupper(int c)
 {
 	char ch = c;
 
-	if (ch <= 'Z')
+	if (ch >= 'A' && <= 'Z')
 		return (1);
 
 	return (0);
