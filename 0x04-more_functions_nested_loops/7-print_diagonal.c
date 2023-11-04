@@ -4,6 +4,7 @@
  * print_diagonal - A function that draws a diagonal line on the terminal.
  * Where n is the number of times \ should be printed
  * The diagonal should end with a \n
+ * @n: the number of characters to be printed
  *
  * Return: Nothing
  */
@@ -33,5 +34,5 @@ void print_diagonal(int n)
 
 
 	}
-	
+
 }
