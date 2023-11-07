@@ -20,6 +20,9 @@ void puts_half(char *str)
 	len = i;
 	mid = len / 2;
 
+	if (len % 2 != 0)
+		mid++;
+
 
 	for (j = mid; str[j] != '\0'; j++)
 	{
