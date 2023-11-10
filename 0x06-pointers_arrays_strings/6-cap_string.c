@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * separator - A function that handles special characters
+ * seperator - A function that handles special characters
  * @c: the character to be checked
  *
  * Return: 1 or 0
