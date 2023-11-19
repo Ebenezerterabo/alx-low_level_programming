@@ -11,7 +11,7 @@
 
 int main(int argc, char **argv)
 {
-	int num1, num2, result = 0;;
+	int num1, num2, result = 0;
 
 	if (argc != 3)
 	{
