@@ -57,8 +57,11 @@ char *str_concat(char *s1, char *s2)
 	char *ptr;
 	int total_len, len1, len2;
 
-	if (s1 == NULL || s2 == NULL)
-		return ("");
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
 
 	len1 = get_length(s1);
 	len2 = get_length(s2);
