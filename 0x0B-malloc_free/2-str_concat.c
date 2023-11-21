@@ -58,7 +58,7 @@ char *str_concat(char *s1, char *s2)
 	int total_len, len1, len2;
 
 	if (s1 == NULL || s2 == NULL)
-		return (0);
+		return;
 
 	len1 = get_length(s1);
 	len2 = get_length(s2);
