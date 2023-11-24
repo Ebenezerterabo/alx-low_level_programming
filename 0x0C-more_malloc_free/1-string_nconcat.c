@@ -9,7 +9,7 @@
  * Return: the string length
  */
 
-int _strlen(char *str)
+unsigned int _strlen(char *str)
 {
 	int len = 0;
 
@@ -44,8 +44,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	dest_len = _strlen(s1);
 
-	if (n >= dest_len)
-		n = dest_len;
+	if (n >= _strlen(s2))
+		n = _strlen(s2);
 
 	len_total = n + dest_len + 1;
 
