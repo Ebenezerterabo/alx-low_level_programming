@@ -34,37 +34,35 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 
-	if (format)
+	while (*ptr && format)
 	{
-		while (*ptr)
+		not_found = 0;
+		switch (*ptr)
 		{
-			not_found = 0;
-
-			switch (*ptr)
-			{
-			case 'c':
-				printf("%c", va_arg(ap, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(ap, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(ap, double));
-				break;
-			case 's':
-				print_string(ap);
-				break;
-			default:
-				not_found = 1;
-				break;
-			}
-
-			if (!not_found && *(ptr + 1))
-				printf(", ");
-			ptr++;
-			not_found = 0;
+		case 'c':
+			printf("%c", va_arg(ap, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(ap, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(ap, double));
+			break;
+		case 's':
+			print_string(ap);
+			break;
+		default:
+			not_found = 1;
+			break;
 		}
-		printf("\n");
-		va_end(ap);
+
+		if (!not_found && *(ptr + 1))
+			printf(", ");
+		ptr++;
+		not_found = 0;
 	}
+
+	printf("\n");
+	va_end(ap);
+
 }
