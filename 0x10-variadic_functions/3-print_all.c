@@ -1,23 +1,34 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
+
+/**
+ * print_string - A function that prints a string
+ * @ap: the pointer to the argument list
+ *
+ * Return: Nothing
+ */
+
+void print_string(va_list ap)
+{
+	char *s = va_arg(ap, char *);
+
+	if (s != NULL)
+		printf("%s", s);
+	else
+		printf("(nil)");
+}
 /**
  * print_all - A function that prints anything
- * @c: character
- * @i: integer
- * @f: float
- * @s: string
+ * @format: the string passed
  *
  * Return: Nothing
  */
 
 void print_all(const char * const format, ...)
 {
-	int i, c;
-	double f;
-	char *s;
+	int not_found = 0;
 	const char *ptr = format;
-	int not_found;
 
 	va_list ap;
 
@@ -26,53 +37,30 @@ void print_all(const char * const format, ...)
 	while (*ptr)
 	{
 		not_found = 0;
+
 		switch (*ptr)
 		{
-			{
-				case 'c':
-					c = va_arg(ap, int);
-					_putchar(c);
-					break;
-			}
-
-			{
-				case 'i':
-					i = va_arg(ap, int);
-					printf("%d", i);
-					break;
-			}
-
-			{
-				case 'f':
-					f = va_arg(ap, double);
-					printf("%f", f);
-					break;
-			}
-
-			{
-				case 's':
-					s = va_arg(ap, char *);
-					if (s != NULL)
-						printf("%s", s);
-					else
-						printf("(nil)");
-					break;
-			}
-
-			{
-				default:
-					not_found = 1;
-					break;
-			}
-
+		case 'c':
+			printf("%c", va_arg(ap, int));
+			break;
+		case 'i':
+			printf("%d", va_arg(ap, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(ap, double));
+			break;
+		case 's':
+			 print_string(ap);
+			break;
+		default:
+			not_found = 1;
+			break;
 		}
 
 		if (!not_found && *(ptr + 1))
 			printf(", ");
-
 		ptr++;
 	}
-
 	va_end(ap);
 	printf("\n");
 }
