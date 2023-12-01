@@ -29,12 +29,13 @@ void print_all(const char * const format, ...)
 {
 	int not_found = 0;
 	const char *ptr = format;
+	int arg_count = 0;
 
 	va_list ap;
 
 	va_start(ap, format);
 
-	while (*ptr)
+	while (*ptr && arg_count < 9)
 	{
 		not_found = 0;
 
@@ -60,6 +61,7 @@ void print_all(const char * const format, ...)
 		if (!not_found && *(ptr + 1))
 			printf(", ");
 		ptr++;
+		arg_count++;
 	}
 	printf("\n");
 	va_end(ap);
