@@ -58,7 +58,6 @@ void print_all(const char * const format, ...)
 		if (!not_found && *(ptr + 1))
 			printf(", ");
 		ptr++;
-		not_found = 0;
 	}
 
 	printf("\n");
