@@ -15,8 +15,7 @@ void print_string(va_list ap)
 
 	if (s == NULL)
 		s = "(nil)";
-	else
-		printf("%s", s);
+	printf("%s", s);
 }
 /**
  * print_all - A function that prints anything
