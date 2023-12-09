@@ -6,7 +6,7 @@
  * Return: Nothing
  */
 
-void__attribute__((constructor)) first()
+void __attribute__((constructor)) first()
 {
 	printf("You're best! and yet, you must allow");
 	printf(",\nI bore my house upon my back!\n");
