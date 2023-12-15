@@ -15,7 +15,10 @@ void print_binary(unsigned long int n)
 
 	for (i = bitIndex; i >= 0; i--)
 	{
-		num = n & (1UL << i);
+		if (n < 0)
+			return;
+
+		num = (n >> i) & 1;
 
 		if (num)
 		{
