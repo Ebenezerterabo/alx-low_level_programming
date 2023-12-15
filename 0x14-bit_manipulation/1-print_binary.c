@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 	{
 		bitNum = (n >> i) & 1;
 
-		if (bitNum == 1)
+		if (bitNum == 1 && !found)
 			found = 1;
 
 		if (found)
