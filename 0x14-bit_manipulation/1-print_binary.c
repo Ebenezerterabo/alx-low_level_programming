@@ -15,14 +15,14 @@ void print_binary(unsigned long int n)
 
 	for (i = bitIndex; i >= 0; i--)
 	{
-		num = n & (1UL << i);;
+		num = n & (1UL << i);
 
 		if (num)
 		{
 			_putchar('1');
 			found = 1;
 		}
-		else if(found || i == 0)
+		else if (found || i == 0)
 			_putchar('0');
 	}
 }
