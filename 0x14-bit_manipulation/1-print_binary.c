@@ -10,14 +10,14 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int bitNum, bitIndex = 31;
+	unsigned long int num, bitIndex = 31;
 	int i, found = 0;
 
 	for (i = bitIndex; i >= 0; i--)
 	{
-		bitNum = (n >> i) & 1;
+		num = n & (1UL << i);;
 
-		if (bitNum == 1)
+		if (num)
 		{
 			_putchar('1');
 			found = 1;
