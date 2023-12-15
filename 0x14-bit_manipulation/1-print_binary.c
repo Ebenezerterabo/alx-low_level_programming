@@ -17,13 +17,12 @@ void print_binary(unsigned long int n)
 	{
 		bitNum = (n >> i) & 1;
 
-		if (bitNum == 1 && !found)
+		if (bitNum == 1)
+		{
+			_putchar('1');
 			found = 1;
-
-		if (found)
-			_putchar(bitNum + '0');
+		}
+		else if(found || i == 0)
+			_putchar('0');
 	}
-
-	if (!found)
-		_putchar('0');
 }
