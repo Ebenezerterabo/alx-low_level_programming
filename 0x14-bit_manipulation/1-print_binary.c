@@ -16,7 +16,7 @@ void print_binary(unsigned long int n)
 	for (i = bitIndex; i >= 0; i--)
 	{
 
-		num = (n >> i) & 1;
+		num = n & (1 << i);
 
 		if (num)
 		{
