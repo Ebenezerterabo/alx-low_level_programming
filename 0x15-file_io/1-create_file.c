@@ -22,17 +22,17 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (text_content == NULL)
-	{
 		text_content = " ";
-		close(file_dpt);
-	}
 
 	len = strlen(text_content);
 
 	len_write = write(file_dpt, text_content, len);
 
 	if (len_write == -1)
+	{
+		close(file_dpt);
 		return (-1);
+	}
 
 	close(file_dpt);
 	return (1);
