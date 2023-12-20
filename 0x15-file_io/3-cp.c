@@ -71,7 +71,8 @@ int main(int ac, char **av)
 
 	if (copy_content == 98)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", av[1]);
 		return (98);
 	}
 	else if (copy_content == 99)
