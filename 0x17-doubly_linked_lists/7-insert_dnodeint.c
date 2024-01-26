@@ -50,12 +50,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	node_len = len_node(*h);
 	temp = *h;
 
-	if (idx == 0 || *h == NULL)
+	if (idx == 0)
 	{
 		return (add_dnodeint(h, n));
 	}
 
-	if (idx > node_len)
+	if (idx > node_len || *h == NULL)
 		return (NULL);
 
 	while (i < idx - 1)
