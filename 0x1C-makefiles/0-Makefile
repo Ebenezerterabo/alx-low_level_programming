@@ -1,0 +1,6 @@
+# Target 'school'
+all: school
+
+# Execute the school command
+school:
+	gcc main.c schoo.c -o school
