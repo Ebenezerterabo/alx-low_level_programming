@@ -6,10 +6,11 @@ NAME = school
 RM = rm
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
+.PHONY: all clean oclean fclean re
+
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-.PHONY: all clean oclean fclean re
 %.o: %.c:
 	$(CC) $(CFLAGS) -c -o $@ $<
 
